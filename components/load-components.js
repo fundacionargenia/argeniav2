@@ -1,11 +1,22 @@
 async function cargarComponente(url, idDestino) {
-  const respuesta = await fetch(url);
-  const html = await respuesta.text();
-  document.getElementById(idDestino).innerHTML = html;
+  const destino = document.getElementById(idDestino);
+  if (!destino) return;
+
+  try {
+    const respuesta = await fetch(url);
+    if (!respuesta.ok) {
+      console.error(`No se pudo cargar ${url}: ${respuesta.status} ${respuesta.statusText}`);
+      return;
+    }
+    const html = await respuesta.text();
+    destino.innerHTML = html;
+  } catch (error) {
+    console.error(`Error al cargar el componente ${url}:`, error);
+  }
 }
 
 async function iniciar() {
-  await cargarComponente('components/header.html', 'header-placeholder');
+  await cargarComponente('/components/header.html', 'header-placeholder');
   initBurgerMenu();
   initNavScroll();
 }
@@ -39,6 +50,6 @@ function initNavScroll() {
   document.body.prepend(sentinel);
   new IntersectionObserver(([e]) => nav.classList.toggle("is-stuck", !e.isIntersecting))
     .observe(sentinel);
-    }
+}
 
-    document.addEventListener("DOMContentLoaded", iniciar);
+document.addEventListener("DOMContentLoaded", iniciar);
