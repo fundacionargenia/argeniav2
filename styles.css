@@ -223,7 +223,7 @@ section[id]{scroll-margin-top:88px}
 }
 
 .allies-title {
-  font-size: 13px;
+  font-size: 18px;
   color: var(--ink-3);
   text-align: center;
   margin-bottom: 22px;
@@ -260,7 +260,7 @@ section[id]{scroll-margin-top:88px}
 
 /* Estilo para las imágenes de los logos */
 .ally-img {
-  height: 40px;          /* Altura uniforme para todos los logos */
+  height: 100px;          /* Altura uniforme para todos los logos */
   width: auto;           /* Mantiene la proporción original de cada logo */
   object-fit: contain;
   opacity: 0.8;          /* Efecto sutil de transparencia */
