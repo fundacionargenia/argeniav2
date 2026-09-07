@@ -68,7 +68,7 @@ section[id]{scroll-margin-top:88px}
 /* ------------------------------------------------------------------ botones */
 .btn{
   display:inline-flex; align-items:center; gap:10px; white-space:nowrap;
-  font-family:"Geist",sans-serif; font-weight:600; font-size:14.5px; letter-spacing:.005em;
+  font-family:"Geist",sans-serif; font-weight:600; font-size:16px; letter-spacing:.005em;
   padding:13px 26px; border-radius:var(--r-control); border:1px solid transparent;
   transition:transform .22s var(--ease), background-color .22s var(--ease),
              border-color .22s var(--ease), color .22s var(--ease), box-shadow .22s var(--ease);
