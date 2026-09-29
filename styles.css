@@ -290,7 +290,7 @@ section[id]{scroll-margin-top:88px}
 .purpose-grid{display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:clamp(40px,7vw,110px); align-items:start}
 .purpose-sticky{position:sticky; top:calc(var(--nav-h) + 56px)}
 .purpose-sticky .lead{margin-top:20px}
-.pillars{border-top:1px solid var(--line)}
+.pillars{border-top:1px solid var(--line); margin-top: 20px;}
 .pillar{
   display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:baseline;
   padding:30px 4px 30px 0; border-bottom:1px solid var(--line);
@@ -1098,8 +1098,15 @@ footer{border-top:1px solid var(--line); padding:44px 0 52px}
     border:1px solid var(--border);
     border-radius:20px;
     padding:32px;
+    margin-top: 15px;
   }
+  .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px;}
+  .prog-card{background:var(--card);padding:30px 26px;}
+  .prog-card .n{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:13px;}
+  .prog-card h3{font-size:18px;margin:14px 0 10px;font-weight:600;font-family:'Inter',sans-serif;}
+  .prog-card p{font-size:14px;line-height:1.6;color:var(--ink-2);margin:0;}
   section.alt .card{ background:var(--panel-2); }
+
   .card .tag{
     font-family:'Space Grotesk',sans-serif;
     font-size:13px;
@@ -1206,3 +1213,97 @@ footer{border-top:1px solid var(--line); padding:44px 0 52px}
     font-size:14px; font-weight:700; flex-shrink:0; margin-top:2px;
   }
   .goal-card p{ color:#d6e0ec; font-size:16px; }
+  
+ /* Grid contenedora */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 32px;
+}
+
+/* Tarjeta individual */
+.tier-card {
+  background: var(--card);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiqueta superior (NIVEL BÁSICO, etc.) */
+.tier-card .n {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Título de la tarjeta (Acceso inicial, etc.) */
+.tier-card h3 {
+  font-family: 'Georgia', serif; /* Tipografía serif como en la imagen */
+  font-size: 22px;
+  font-weight: normal;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+}
+
+/* Lista de características con líneas separadoras */
+.tier-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1; /* Empuja la nota y botón hacia la parte inferior */
+}
+
+.tier-card ul li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Línea divisoria tenue */
+}
+
+.tier-card ul li:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Nota de aporte de cooperación */
+.tier-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-bottom: 20px;
+}
+
+/* Botón transparente con borde en var(--accent) */
+.tier-card .prog-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 12px 18px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tier-card .prog-btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* Adaptabilidad a dispositivos móviles */
+@media (max-width: 900px) {
+  .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+}
