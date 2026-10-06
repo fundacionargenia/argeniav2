@@ -16,7 +16,10 @@ async function cargarComponente(url, idDestino) {
 }
 
 async function iniciar() {
-  await cargarComponente('./components/header.html', 'header-placeholder');
+  await Promise.all([
+    cargarComponente('./components/header.html', 'header-placeholder'),
+    cargarComponente('./components/footer.html', 'footer-placeholder'),
+  ]);
   initBurgerMenu();
   initNavScroll();
 }
